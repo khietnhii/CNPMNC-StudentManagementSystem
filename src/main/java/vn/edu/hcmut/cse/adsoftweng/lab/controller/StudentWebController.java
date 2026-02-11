@@ -59,8 +59,15 @@ public class StudentWebController {
 
     @PostMapping("/save")
     public String saveStudent(@ModelAttribute("student") Student student) {
+        Student existingStudent = service.get(student.getId());
+
         service.save(student);
-        return "redirect:/students/" + student.getId();
+
+        if (existingStudent != null) {
+            return "redirect:/students/" + student.getId();
+        } else {
+            return "redirect:/students";
+        }
     }
 
     @GetMapping("/edit/{id}")

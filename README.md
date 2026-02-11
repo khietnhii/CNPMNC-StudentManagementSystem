@@ -36,7 +36,7 @@ Dự án xây dựng ứng dụng quản lý sinh viên sử dụng Java Spring 
     POSTGRES_PORT=5432
     POSTGRES_DB=student_management
     POSTGRES_USER=postgres
-    POSTGRES_PASSWORD=[MẬT_KHẨU_CỦA_BẠN]
+    POSTGRES_PASSWORD=[YOUR_PASSWORD]
     ```
 
 3.  **Chạy ứng dụng:**
@@ -48,25 +48,7 @@ Dự án xây dựng ứng dụng quản lý sinh viên sử dụng Java Spring 
 4.  **Truy cập:**
     Mở trình duyệt và vào địa chỉ: `http://localhost:8080/students`
 
-## 4. Ảnh Chụp Màn Hình (Lab 4)
-
-**4.1. Trang Danh sách Sinh viên (List View)**
-![Danh sách sinh viên](./images/list_view.png)
-
-**4.2. Form Thêm Sinh viên Mới (Add New)**
-![Thêm sinh viên mới](images/add_new.png)
-
-**4.3. Trang Chi Tiết (Detail View)**
-![Chi tiết sinh viên](images/detail_view.png)
-
-**4.4. Form Chỉnh Sửa (Edit)**
-![Chỉnh sửa thông tin sinh viên](images/edit_view.png)
-
-**4.5. Chức năng Xóa (Delete)**
-![Xóa sinh viên](images/delete.png)
-&nbsp;
-
-## 5. Trả Lời Câu Hỏi Lý Thuyết (Lab 1)
+## 4. Trả Lời Câu Hỏi Lý Thuyết (Lab 1)
 
 Dưới đây là câu trả lời cho các câu hỏi bài tập trong Lab 1 (Phần 8):
 
@@ -81,6 +63,23 @@ Dưới đây là câu trả lời cho các câu hỏi bài tập trong Lab 1 (P
 **Câu 4: Cấu hình Hibernate**
 * **Hiện tượng:** Mỗi lần tắt ứng dụng và chạy lại, dữ liệu cũ bị mất hết.
 * **Giải thích:** Do trong file `application.properties` (Lab 1) ta cấu hình `spring.jpa.hibernate.ddl-auto=create`. Chế độ `create` chỉ thị cho Hibernate xóa toàn bộ schema (Drop tables) và tạo lại mới mỗi khi khởi động SessionFactory. Để giữ lại dữ liệu, ta cần đổi thành `update` hoặc `none`.
+
+## 5. Ảnh Chụp Màn Hình (Lab 4)
+
+**5.1. Trang Danh sách Sinh viên (List View)**
+![Danh sách sinh viên](./images/list_view.png)
+
+**5.2. Form Thêm Sinh viên Mới (Add New)**
+![Thêm sinh viên mới](images/add_new.png)
+
+**5.3. Trang Chi Tiết (Detail View)**
+![Chi tiết sinh viên](images/detail_view.png)
+
+**5.4. Form Chỉnh Sửa (Edit)**
+![Chỉnh sửa thông tin sinh viên](images/edit_view.png)
+
+**5.5. Chức năng Xóa (Delete)**
+![Xóa sinh viên](images/delete.png)
 
 ---
 *Cảm ơn Thầy đã xem bài nộp của nhóm chúng em!*

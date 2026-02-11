@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import vn.edu.hcmut.cse.adsoftweng.lab.entity.Student;
 import vn.edu.hcmut.cse.adsoftweng.lab.repository.StudentRepository;
+import org.springframework.data.domain.Sort;
 import java.util.List;
 
 @Service
@@ -12,7 +13,7 @@ public class StudentService {
     private StudentRepository repository;
 
     public List<Student> getAll() {
-        return repository.findAll();
+        return repository.findAll(Sort.by(Sort.Direction.ASC, "id"));
     }
 
     public Student getById(String id) {

@@ -49,6 +49,7 @@
 			<artifactId>spring-boot-starter-webmvc-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!-- SQLite -->
 		<!--
 		<dependency>
 			<groupId>org.xerial</groupId>
@@ -61,6 +62,7 @@
 			<version>6.2.4.Final</version>
 		</dependency>
 		-->
+		<!-- PostgreSQL -->
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>

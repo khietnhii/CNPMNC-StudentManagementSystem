@@ -44,7 +44,7 @@
             </div>
 
             <button type="submit">Lưu Thông Tin</button>
-            <a href="/students" class="cancel-link">Hủy bỏ</a>
+            <a th:href="${student.id} ? @{'/students/' + ${student.id}} : @{/students}" class="cancel-link">Hủy bỏ</a>
         </form>
     </div>
 </body>

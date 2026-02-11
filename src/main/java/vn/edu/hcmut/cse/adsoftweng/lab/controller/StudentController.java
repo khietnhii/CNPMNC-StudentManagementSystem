@@ -18,7 +18,7 @@ public class StudentController {
     }
     // 2. API Lấy chi tiết: GET http://localhost:8080/api/students/{id}
     @GetMapping("/{id}")
-    public Student getStudentById(@PathVariable String id) {
+    public Student getStudentById(@PathVariable Integer id) {
         return service.getById(id);
     }
 }

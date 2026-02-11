@@ -16,7 +16,7 @@ public class StudentService {
         return repository.findAll(Sort.by(Sort.Direction.ASC, "id"));
     }
 
-    public Student getById(String id) {
+    public Student getById(Integer id) {
         return repository.findById(id).orElse(null);
     }
 
@@ -28,11 +28,7 @@ public class StudentService {
         repository.save(student);
     }
 
-    public void delete(String id) {
+    public void delete(Integer id) {
         repository.deleteById(id);
-    }
-
-    public Student get(String id) {
-        return repository.findById(id).orElse(null);
     }
 }

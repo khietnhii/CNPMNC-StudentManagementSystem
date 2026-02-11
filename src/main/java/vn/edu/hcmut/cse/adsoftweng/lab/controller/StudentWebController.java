@@ -41,8 +41,8 @@ public class StudentWebController {
     }
 
     @GetMapping("/{id}")
-    public String viewStudent(@PathVariable("id") String id, Model model) {
-        Student student = service.get(id);
+    public String viewStudent(@PathVariable("id") Integer id, Model model) {
+        Student student = service.getById(id);
         if (student == null) {
             return "redirect:/students";
         }
@@ -59,7 +59,7 @@ public class StudentWebController {
 
     @PostMapping("/save")
     public String saveStudent(@ModelAttribute("student") Student student) {
-        Student existingStudent = service.get(student.getId());
+        Student existingStudent = service.getById(student.getId());
 
         service.save(student);
 
@@ -71,8 +71,8 @@ public class StudentWebController {
     }
 
     @GetMapping("/edit/{id}")
-    public String showEditForm(@PathVariable("id") String id, Model model) {
-        Student student = service.get(id);
+    public String showEditForm(@PathVariable("id") Integer id, Model model) {
+        Student student = service.getById(id);
         if (student == null) {
             return "redirect:/students";
         }
@@ -82,7 +82,7 @@ public class StudentWebController {
     }
 
     @GetMapping("/delete/{id}")
-    public String deleteStudent(@PathVariable("id") String id) {
+    public String deleteStudent(@PathVariable("id") Integer id) {
         service.delete(id);
         return "redirect:/students";
     }

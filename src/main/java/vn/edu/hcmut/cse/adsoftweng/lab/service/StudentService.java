@@ -24,7 +24,7 @@ public class StudentService {
     }
 
     public void save(Student student) {
-        repository.save(student); // Hàm này dùng cho cả Thêm mới và Cập nhật
+        repository.save(student);
     }
 
     public void delete(String id) {

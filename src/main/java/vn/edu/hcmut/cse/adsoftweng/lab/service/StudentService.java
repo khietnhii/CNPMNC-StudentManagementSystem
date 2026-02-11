@@ -2,8 +2,8 @@ package vn.edu.hcmut.cse.adsoftweng.lab.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import vn.edu.hcmut.cse.adse.lab.entity.Student;
-import vn.edu.hcmut.cse.adse.lab.repository.StudentRepository;
+import vn.edu.hcmut.cse.adsoftweng.lab.entity.Student;
+import vn.edu.hcmut.cse.adsoftweng.lab.repository.StudentRepository;
 import java.util.List;
 
 @Service

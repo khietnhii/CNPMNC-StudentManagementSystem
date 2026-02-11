@@ -2,8 +2,8 @@ package vn.edu.hcmut.cse.adsoftweng.lab.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import vn.edu.hcmut.cse.adse.lab.entity.Student;
-import vn.edu.hcmut.cse.adse.lab.service.StudentService;
+import vn.edu.hcmut.cse.adsoftweng.lab.entity.Student;
+import vn.edu.hcmut.cse.adsoftweng.lab.service.StudentService;
 import java.util.List;
 
 @RestController

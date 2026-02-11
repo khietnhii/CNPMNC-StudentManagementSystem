@@ -83,4 +83,4 @@ Dưới đây là câu trả lời cho các câu hỏi bài tập trong Lab 1 (P
 * **Giải thích:** Do trong file `application.properties` (Lab 1) ta cấu hình `spring.jpa.hibernate.ddl-auto=create`. Chế độ `create` chỉ thị cho Hibernate xóa toàn bộ schema (Drop tables) và tạo lại mới mỗi khi khởi động SessionFactory. Để giữ lại dữ liệu, ta cần đổi thành `update` hoặc `none`.
 
 ---
-*Cảm ơn Thầy Cô đã xem bài nộp của nhóm!*
+*Cảm ơn Thầy đã xem bài nộp của nhóm chúng em!*

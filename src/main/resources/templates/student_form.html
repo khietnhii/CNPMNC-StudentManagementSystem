@@ -23,7 +23,7 @@
         
         <form th:action="@{/students/save}" method="post" th:object="${student}">
             <div class="form-group">
-                <label>Mã Số Sinh Viên (ID):</label>
+                <label>ID:</label>
                 <input type="text" th:field="*{id}" required 
                        th:readonly="${student.id != null}" />
             </div>

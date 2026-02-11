@@ -19,3 +19,6 @@ INSERT INTO students (id, name, email, age) VALUES (10, 'Dang Van J', 'vanj@exam
 INSERT INTO students (id, name, email, age) VALUES (11, 'Nguyen Hoang K', 'hoangk@example.com', 22);
 INSERT INTO students (id, name, email, age) VALUES (12, 'Ly My L', 'myl@example.com', 20);
 INSERT INTO students (id, name, email, age) VALUES (13, NULL, 'nhi.tranduongkhiet@gamil.com', 21);
+INSERT INTO students (id, name, email, age) VALUES (14, NULL, 'nhibao@exmaple.com', 17),
+												   (15, 'Dao Thi J', 'jthi.dao@exmp.com', 18),
+												   (16, 'Luong Ngoc V', 'vil@example.com', 15);

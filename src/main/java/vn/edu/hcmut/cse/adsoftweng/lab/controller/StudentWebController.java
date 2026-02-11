@@ -58,12 +58,19 @@ public class StudentWebController {
     }
 
     @PostMapping("/save")
-    public String saveStudent(@ModelAttribute("student") Student student) {
-        Student existingStudent = service.getById(student.getId());
+    public String saveStudent(@ModelAttribute("student") Student student,
+                              @RequestParam(value = "isUpdate", required = false) Boolean isUpdate,
+                              Model model) {
+        
+        if ((isUpdate == null || !isUpdate) && service.getById(student.getId()) != null) {
+            model.addAttribute("error", "Lỗi: ID " + student.getId() + " đã tồn tại! Vui lòng chọn ID khác.");
+            model.addAttribute("pageTitle", "Thêm Sinh Viên Mới");
+            return "student_form";
+        }
 
         service.save(student);
 
-        if (existingStudent != null) {
+        if (isUpdate != null && isUpdate) {
             return "redirect:/students/" + student.getId();
         } else {
             return "redirect:/students";

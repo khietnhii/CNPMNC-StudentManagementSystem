@@ -40,9 +40,14 @@ public class StudentWebController {
         return "students";
     }
 
-    @GetMapping("/") 
-    public String home() {
-        return "redirect:/students";
+    @GetMapping("/{id}")
+    public String viewStudent(@PathVariable("id") String id, Model model) {
+        Student student = service.get(id);
+        if (student == null) {
+            return "redirect:/students";
+        }
+        model.addAttribute("student", student);
+        return "student_detail";
     }
 
     @GetMapping("/new")
@@ -55,7 +60,7 @@ public class StudentWebController {
     @PostMapping("/save")
     public String saveStudent(@ModelAttribute("student") Student student) {
         service.save(student);
-        return "redirect:/students";
+        return "redirect:/students/" + student.getId();
     }
 
     @GetMapping("/edit/{id}")

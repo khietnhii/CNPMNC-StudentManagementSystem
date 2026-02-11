@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Chi Tiết Sinh Viên</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; max-width: 600px; margin: auto; }
+        .detail-box { border: 1px solid #ddd; padding: 20px; border-radius: 5px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        .row { margin-bottom: 10px; }
+        label { font-weight: bold; width: 100px; display: inline-block; }
+        .actions { margin-top: 20px; }
+        .btn { padding: 8px 15px; text-decoration: none; color: white; border-radius: 4px; margin-right: 10px;}
+        .btn-edit { background-color: #ffc107; color: black; }
+        .btn-delete { background-color: #dc3545; }
+        .btn-back { background-color: #6c757d; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; }
+    </style>
+</head>
+
+<body>
+    <h1>Thông Tin Chi Tiết</h1>
+    
+    <div class="detail-box" th:object="${student}">
+        <div class="row">
+            <label>ID:</label> <span th:text="*{id}"></span>
+        </div>
+        <div class="row">
+            <label>Họ tên:</label> <span th:text="*{name}"></span>
+        </div>
+        <div class="row">
+            <label>Email:</label> <span th:text="*{email}"></span>
+        </div>
+        <div class="row">
+            <label>Tuổi:</label> <span th:text="*{age}"></span>
+        </div>
+        
+        <div class="actions">
+            <a th:href="@{'/students/edit/' + *{id}}" class="btn btn-edit">Chỉnh Sửa</a>
+            
+            <a th:href="@{'/students/delete/' + *{id}}" 
+               class="btn btn-delete"
+               onclick="return confirm('Bạn có chắc chắn muốn xóa không?');">Xóa</a>
+               
+            <a href="/students" class="btn btn-back">Quay Lại</a>
+        </div>
+    </div>
+</body>
+
+</html>

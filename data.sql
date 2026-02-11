@@ -5,20 +5,21 @@ CREATE TABLE IF NOT EXISTS students (
  email TEXT,
  age INTEGER
 );
+
 -- Thêm dữ liệu mẫu
-INSERT INTO students (id, name, email, age) VALUES (1, 'Nguyen Van A', 'vana@example.com', 20);
-INSERT INTO students (id, name, email, age) VALUES (2, 'Tran Thi B', 'thib@example.com', 21);
-INSERT INTO students (id, name, email, age) VALUES (3, 'Le Van C', 'vanc@example.com', 22);
-INSERT INTO students (id, name, email, age) VALUES (4, 'Pham Quang D', 'quangd@example.com', 19);
-INSERT INTO students (id, name, email, age) VALUES (5, 'Hoang Thi E', 'thie@example.com', 20);
-INSERT INTO students (id, name, email, age) VALUES (6, 'Do Minh F', 'minhf@example.com', 21);
-INSERT INTO students (id, name, email, age) VALUES (7, 'Vo Thanh G', 'thanhg@example.com', 22);
-INSERT INTO students (id, name, email, age) VALUES (8, 'Phan Ngoc H', 'ngoch@example.com', 20);
-INSERT INTO students (id, name, email, age) VALUES (9, 'Bui Kim I', 'kimi@example.com', 19);
-INSERT INTO students (id, name, email, age) VALUES (10, 'Dang Van J', 'vanj@example.com', 21);
-INSERT INTO students (id, name, email, age) VALUES (11, 'Nguyen Hoang K', 'hoangk@example.com', 22);
-INSERT INTO students (id, name, email, age) VALUES (12, 'Ly My L', 'myl@example.com', 20);
-INSERT INTO students (id, name, email, age) VALUES (13, NULL, 'nhi.tranduongkhiet@gamil.com', 21);
-INSERT INTO students (id, name, email, age) VALUES (14, NULL, 'nhibao@exmaple.com', 17),
-												   (15, 'Dao Thi J', 'jthi.dao@exmp.com', 18),
-												   (16, 'Luong Ngoc V', 'vil@example.com', 15);
+INSERT INTO students (id, name, email, age) VALUES (1, 'Nguyễn Văn A', 'vana@example.com', 20);
+INSERT INTO students (id, name, email, age) VALUES (2, 'Trần Thị B', 'thib@example.com', 21);
+INSERT INTO students (id, name, email, age) VALUES (3, 'Lê Văn C', 'vanc@example.com', 18);
+INSERT INTO students (id, name, email, age) VALUES (4, 'Phạm Quang D', 'quangd@example.com', 19);
+INSERT INTO students (id, name, email, age) VALUES (5, 'Hoàng Thị E', 'thie@example.com', 20);
+INSERT INTO students (id, name, email, age) VALUES (6, 'Đỗ Minh F', 'minhf@example.com', 17);
+INSERT INTO students (id, name, email, age) VALUES (7, 'Võ Thanh G', 'thanhg@example.com', 22);
+INSERT INTO students (id, name, email, age) VALUES (8, 'Phan Ngọc H', 'ngoch@example.com', 20);
+INSERT INTO students (id, name, email, age) VALUES (9, 'Bùi Kim I', 'kimi@example.com', 19);
+INSERT INTO students (id, name, email, age) VALUES (10, 'Đặng Văn J', 'vanj@example.com', 21);
+INSERT INTO students (id, name, email, age) VALUES (11, 'Nguyễn Hoàng K', 'hoangk@example.com', 22);
+INSERT INTO students (id, name, email, age) VALUES (12, 'Lý Mỹ L', 'myl@example.com', 20);
+INSERT INTO students (id, name, email, age) VALUES (13, 'Trần Nhi', 'nhi.tran@example.com', 21);
+INSERT INTO students (id, name, email, age) VALUES (14, 'Hà Nhi', 'nhiha@example.com', 17),
+												   (15, 'Đào Thị J', 'jthi.dao@exmp.com', 18),
+												   (16, 'Lương Ngọc V', 'vil@example.com', 15);

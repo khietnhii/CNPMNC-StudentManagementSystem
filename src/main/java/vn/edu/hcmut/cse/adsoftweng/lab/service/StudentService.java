@@ -22,4 +22,16 @@ public class StudentService {
     public List<Student> searchByName(String keyword) {
         return repository.findByNameContainingIgnoreCase(keyword);
     }
+
+    public void save(Student student) {
+        repository.save(student); // Hàm này dùng cho cả Thêm mới và Cập nhật
+    }
+
+    public void delete(String id) {
+        repository.deleteById(id);
+    }
+
+    public Student get(String id) {
+        return repository.findById(id).orElse(null);
+    }
 }

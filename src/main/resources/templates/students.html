@@ -1,24 +1,44 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"> <head>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
     <meta charset="UTF-8">
-    <title>Danh Sách Sinh Viên</title>
+    <title>Quản Lý Sinh Viên</title>
     <style>
-        body { font-family: sans-serif; padding: 20px; }
-        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
-        th { background-color: #f2f2f2; }
-        .text-danger {
-            color: red;
-            font-weight: bold;
-        }
+        body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; padding: 20px; }
+        h1 { color: #333; }
+        
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; box-shadow: 0 0 20px rgba(0,0,0,0.1); }
+        th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #ddd; }
+        th { background-color: #009879; color: #ffffff; }
+        tr:hover { background-color: #f5f5f5; }
+        
+        .text-danger { color: red; font-weight: bold; }
+        
+        .btn { padding: 8px 15px; text-decoration: none; border-radius: 4px; color: white; margin-right: 5px; }
+        .btn-add { background-color: #28a745; display: inline-block; margin-bottom: 15px; }
+        .btn-edit { background-color: #ffc107; color: black; }
+        .btn-delete { background-color: #dc3545; }
+        
+        .search-form { margin-bottom: 20px; }
+        .search-input { padding: 8px; width: 300px; border: 1px solid #ddd; border-radius: 4px; }
     </style>
 </head>
+
 <body>
-    <h1>Danh Sách Sinh Viên (SSR)</h1>
-    <form action="/students" method="GET" style="margin-bottom: 20px;">
-        <input type="text" name="keyword" placeholder="Nhập tên sinh viên..." th:value="${keyword}" />
-        <button type="submit">Tìm Kiếm</button>
-    </form>
+    <h1>Danh Sách Sinh Viên</h1>
+
+    <div class="search-form">
+        <form action="/students" method="GET">
+            <input type="text" name="keyword" class="search-input" 
+                   placeholder="Nhập tên để tìm kiếm..." th:value="${keyword}" />
+            <button type="submit" style="padding: 8px 15px; cursor: pointer;">Tìm Kiếm</button>
+            <a href="/students" style="margin-left: 10px;">Reset</a>
+        </form>
+    </div>
+
+    <a href="/students/new" class="btn btn-add">+ Thêm Sinh Viên Mới</a>
+
     <table>
         <thead>
             <tr>
@@ -26,18 +46,28 @@
                 <th>Họ và Tên</th>
                 <th>Email</th>
                 <th>Tuổi</th>
+                <th>Thao Tác</th>
             </tr>
         </thead>
         <tbody>
             <tr th:each="student : ${dsSinhVien}" 
                 th:classappend="${student.age < 18} ? 'text-danger' : ''">
-
-                <td th:text="${student.id}">ID</td>
-                <td th:text="${student.name}">Tên</td>
-                <td th:text="${student.email}">Email</td>
-                <td th:text="${student.age}">Tuổi</td>
+                
+                <td th:text="${student.id}"></td>
+                <td th:text="${student.name}"></td>
+                <td th:text="${student.email}"></td>
+                <td th:text="${student.age}"></td>
+                
+                <td>
+                    <a th:href="@{'/students/edit/' + ${student.id}}" class="btn btn-edit">Sửa</a>
+                    
+                    <a th:href="@{'/students/delete/' + ${student.id}}" 
+                       class="btn btn-delete"
+                       onclick="return confirm('Bạn có chắc chắn muốn xóa sinh viên này không?');">Xóa</a>
+                </td>
             </tr>
         </tbody>
     </table>
 </body>
+
 </html>
